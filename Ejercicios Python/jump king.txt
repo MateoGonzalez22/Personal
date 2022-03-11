@@ -1,0 +1,9 @@
+Multijugador del juego 2D SinglePlayer JumpKing
+
+El juego ya existe, la idea es crear un multijugador que todavia no esta desarrollado y vi que a la comunidad del juego le interesa
+
+Los desarolladores del juego estan diseñando una nueva version del juego que contiene multijugador pero tiene un cambio grafico bastante grande que a la comunidad no le gusto mucho
+
+Acceder a los punteros de memoria para guardar valores de posicion de jugador
+Trainer en C++
+Crear servidor C++
