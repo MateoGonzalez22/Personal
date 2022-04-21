@@ -1,0 +1,6 @@
+docker exec -it <idImagen> bash
+docker system prune
+docker login
+docker tag nombre-imagen nombreUsuaio/nombreNuevoImagen
+docker push nombreUsuaio/nombreNuevoImagen
+docker pull nombreUsuaio/nombreNuevoImagen
