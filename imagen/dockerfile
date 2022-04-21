@@ -1,0 +1,4 @@
+FROM httpd:2.4
+COPY ./conf.conf /usr/local/apache2/conf/httpd.conf
+COPY ./key.crt /usr/local/apache2/conf/
+COPY ./key.key /usr/local/apache2/conf/
