@@ -1,18 +1,37 @@
-array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-import os
+import time
 
 file = open("spanish wordlist.txt")
 
-letra = "z"
+silaba = input("Igrese silaba: ")
 
-spanish = open("spanishWordlist/" + letra + ".txt", "a")
+def array():
+
+    wordlist = []
+
+    for i in file:
+        wordlist.append(i)
+
+    start = time.time()
+
+    for i in wordlist:
+        if (i.find(silaba) >= 0):
+            print(i)
+            break
+
+    print("Tiempo total: " + str((time.time() - start)))
 
 
-for x in file:
-    
-    if (letra == x[0]):
 
-        spanish.write(x)
+def archivo():
+
+    start = time.time()
+
+    for i in file:
+        if (i.find(silaba) >= 0):
+            print(i)
+            break
+
+    print("Tiempo total: " + str((time.time() - start)))
 
 
+archivo()

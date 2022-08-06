@@ -1,5 +1,4 @@
 from argparse import Action
-from tabnanny import check
 import click
 from selenium import webdriver
 import time
@@ -30,7 +29,8 @@ def connectToRoom():
     if(input("Ingrese 1 para crear la sala o 2 para unirse a una sala: ") == "2"):
 
         #driver.get(input("Ingrese el link de la sala: "))
-        driver.get("https://jklm.fun/UCHG")
+        id = input("Ingrese las 4 letras de la sala: ")
+        driver.get("https://jklm.fun/" + id)
 
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@class='styled nickname']")))
         nickName = driver.find_element(By.XPATH, "//input[@class='styled nickname']")
@@ -65,6 +65,8 @@ def matchStarted():
 
             while(turn.is_displayed()):
 
+                #start = time.time()
+
                 syllable = checkSyllable().upper()
 
                 word = wordFinder.findWord(syllable)
@@ -75,12 +77,14 @@ def matchStarted():
                 turn.send_keys(Keys.ENTER)
 
                 time.sleep(1)
+                #print(time.time() - start)
 
-            # print("Turno del rival")
+                
+            # Termino mi turno
 
             time.sleep(0.5)
 
-        # print("termino la partida")
+        # Termino la partida
 
         joinGame()
 
