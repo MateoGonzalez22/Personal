@@ -15,7 +15,6 @@ def joinRoom(driver, botName, codigo):
 
         driver.get("https://jklm.fun/" + codigo)
 
-
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@class='styled nickname']")))
     nickName = driver.find_element(By.XPATH, "//input[@class='styled nickname']")
     nickName.clear()
@@ -25,8 +24,10 @@ def joinRoom(driver, botName, codigo):
     driver.find_element(By.XPATH, '//button[@class="toggleMute"]').click()
     driver.switch_to.frame(0)
 
+    if(codigo == None):
+        print("Codigo de la sala: " + driver.current_url)
+    
     utils.joinGame(driver)
 
     bot.bot(driver)
 
-    time.sleep(10)

@@ -24,31 +24,32 @@ def bot(driver):
             driver.close()
 
         
-        while(True):
-
-            seating = driver.find_element(By.XPATH, "//div[@class='seating']")
-
-            while(seating.is_displayed() == False):
-
-                inputWord = driver.find_element(By.XPATH, '//input[@type="text"]')
-
-                while(inputWord.is_displayed()):
-
-                    # Mi turno
-
-                    word = wordFinder.findWord(checkSyllable.checkSyllable(driver).upper())
-
-                    usedWords.appendWord(word)
-                    
-                    inputWord.send_keys(word)
-                    inputWord.send_keys(Keys.ENTER)
-
-                    time.sleep(1)
-
-                # Termino mi turno
-
-                time.sleep(0.5)
         
-            # Termino la partida
 
-            join.joinGame(driver)
+        seating = driver.find_element(By.XPATH, "//div[@class='seating']")
+
+        while(seating.is_displayed() == False):
+
+            inputWord = driver.find_element(By.XPATH, '//input[@type="text"]')
+
+            while(inputWord.is_displayed()):
+
+                # Mi turno
+
+                word = wordFinder.findWord(checkSyllable.checkSyllable(driver).upper())
+
+                usedWords.appendWord(word)
+                
+                inputWord.send_keys(word)
+                inputWord.send_keys(Keys.ENTER)
+
+                time.sleep(1)
+
+            # Termino mi turno
+
+            time.sleep(0.5)
+    
+        # Termino la partida
+        
+
+        join.joinGame(driver)

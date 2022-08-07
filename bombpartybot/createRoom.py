@@ -18,7 +18,6 @@ def createRoom(driver, roomName, botName):
     nickname.clear()
     nickname.send_keys(roomName)
     driver.find_element(By.XPATH, '//button[@data-text="play"]').click()
-
     joinRoom.joinRoom(driver, botName, None)
 
 

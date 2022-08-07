@@ -23,7 +23,7 @@ def window():
 
     # driver = webdriver.Firefox()
 
-
+    
     while(True):
 
         print("////////////////////////////////////////////////////\n")
@@ -49,7 +49,6 @@ def window():
         else:
 
             print("\nIncorrecto!\n")
-
 
 
 
